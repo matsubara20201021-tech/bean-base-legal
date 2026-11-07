@@ -1,11 +1,11 @@
-# BeanBase Privacy Policy
+# Dripsight Privacy Policy
 
-Last updated: September 21, 2026
+Last updated: October 9, 2026
 Effective date: September 21, 2026
 
 ## 1. Scope
 
-This Privacy Policy (the "Policy") applies to the Android app "BeanBase" (the "App") distributed on Google Play by yuzumaruca (the "Developer").
+This Privacy Policy (the "Policy") applies to the Android app "Dripsight" (the "App") distributed on Google Play by yuzumaruca (the "Developer").
 
 The App lets you log coffee brews, keep master data about your equipment, record how each cup tasted, and analyse those records. This Policy explains what information is handled when you use the App, where it is stored, what is sent outside your device, and what choices you have.
 
@@ -17,6 +17,7 @@ The App lets you log coffee brews, keep master data about your equipment, record
 - **Cloud backup sends and stores the photos you added (images of beans, equipment and shops) as well as your brew records and master data** (Section 8).
 - The free manual export and import (Section 15) write your data, including photos, to a file on your device. This export does not go through any server.
 - The Developer does not use your records or photos for ad targeting and does not sell them to third parties.
+- **There is a feature that lets you share a recipe (a brewing method) with other users, at your own initiative** (Section 18). This is not the Developer providing your information to a third party; whether to share, and with whom, is entirely up to your own actions and judgement.
 
 ## 3. Information the App handles and where it is stored
 
@@ -36,7 +37,7 @@ The categories of information the App handles, and where each is stored, are as 
 - Usage statistics and error and crash records are sent to the Developer to improve the App (analysing usage and fixing defects). Sending them is optional, and you can turn it off at any time under "Privacy" on the settings screen (Section 15).
 - Apart from usage statistics and error and crash records, the information above is not kept anywhere outside your device unless you run the cloud backup described in Section 8. No information identifying you, such as a name or an email address, is attached to a record.
 - You are not asked to sign in with a Google account to store records, master data, analysis results or photos (the cases where signing in is required are described in Section 6).
-- Uninstalling the App deletes the information stored on your device (records, master data, analysis results, photos, articles and settings). If you use cloud backup, described in Section 8, the copy in the cloud remains (if you want it deleted, please contact us using the details in Section 19). Files you exported as described in Section 15 also remain under your own control.
+- Uninstalling the App deletes the information stored on your device (records, master data, analysis results, photos, articles and settings). If you use cloud backup, described in Section 8, the copy in the cloud remains (you can delete it with "Delete account and cloud data" in the App; if you have already uninstalled the App, please contact us using the details in Section 21). Files you exported as described in Section 15 also remain under your own control.
 - Information stored on your device (records, master data, analysis results, photos, articles and settings) may be backed up automatically to your own Google account by the operating system's standard backup feature (Android), depending on your device settings. How that backup is handled is governed by Google's policies, and the operator of the App does not access the contents of that backup.
 
 ## 4. Overview of information sent outside the device
@@ -45,7 +46,7 @@ The categories of information the App handles, and where each is stored, are as 
 |---|---|---|
 | Creating, updating or deleting a brew record, master entry, analysis result or photo, and opening list, detail or analysis screens | (Nothing is sent. Everything is processed on the device.) | (Not applicable) |
 | Running the AI feature (reading bean details from a photo) | The photo you selected and the instruction text for the AI | Google's Gemini API, through the Developer's relay server (Google Cloud, Tokyo region) |
-| Using the AI feature for the first time, and watching an ad to earn free uses | The anonymous account identifier, the app version, the originating IP address, and Google Play's verdict on the integrity of the app and device | The Developer's relay server; Google Play (Play Integrity) |
+| Creating an anonymous account (when you perform one of the actions listed in Section 6), using the AI feature, and watching an ad to earn free uses | The anonymous account identifier, the app version, the originating IP address, and Google Play's verdict on the integrity of the app and device | The Developer's relay server; Google Play (Play Integrity) |
 | Signing in with Google (only for purchase and purchase restore) | Google account credentials (ID token) | Firebase Authentication (Google) |
 | Purchasing, renewing or cancelling the Pro plan | The purchase token and product ID | Google Play, through the Developer's relay server |
 | Running a cloud backup (Pro plan) | The data exported from the on-device database (brew records, master data and so on) and the photos you added (resized before sending; see Section 8) | The Developer's Google Cloud Storage (Tokyo region, through the Developer's relay server) |
@@ -68,7 +69,14 @@ If you never use the AI feature, nothing is sent through this path.
 ## 6. Accounts and sign-in
 
 - The App **works without signing in** from the moment you install it. Logging, master data and analysis require no account.
-- **The first time you use the AI feature**, an anonymous Firebase Authentication account is created so that your remaining uses can be counted. What is created is a random identifier (uid) that does not by itself identify you. You are not asked for a name or an email address.
+- An anonymous Firebase Authentication account is created **only when you choose to perform one of the following actions**, so that your remaining uses can be counted and the sharing and circle features can be provided. It is never created automatically when the app starts.
+  1. Using the AI feature for the first time (when the AI feature requests an authentication token)
+  2. Applying a promotion code
+  3. Creating or joining a circle
+  4. Checking the contents of a share key
+  5. Importing shared content
+
+  What is created is a random identifier (uid) that does not by itself identify you. You are not asked for a name or an email address.
 - **Signing in with Google is required only to purchase the Pro plan or restore a purchase.** You are never asked to sign in with Google for free use. When you sign in, Firebase Authentication records identifying information for that Google account (such as the email address). The relay server stores only the identifier (uid) and the sign-in method; the App does not display your email address or link it to your records.
 - If you sign in with Google while an anonymous account already holds your usage counters, the same identifier is kept wherever possible. If the Google account is already associated with a different identifier, you are signed in with that identifier instead and any remaining uses on the anonymous account are not carried over.
 
@@ -101,10 +109,10 @@ Pro plan subscribers can keep a copy of their records in the cloud.
 - **How stored data is used**: only your own records and photos are stored, and they are used only for backup and restore. They are not provided to third parties and are not used for advertising.
 - **When it runs**: if automatic backup is on, it runs when you open the App if at least six hours have passed since the last successful backup (that is, while you are using the App, data may be sent automatically every six hours). You can also run it at any time from the screen. Automatic backup can be turned off in the settings.
 - **Photos and Wi-Fi**: by default, automatic backup **sends photos only while you are connected to Wi-Fi (or Ethernet)**. On mobile data, only the record data is sent, and the photos are sent the next time you are on Wi-Fi. You can change this at any time with the "Upload photos on Wi-Fi only" switch. A manual backup or restore that you start from the screen runs regardless of the type of connection.
-- **Versions kept and automatic deletion of photos**: only the latest version of the record data is kept, and a version that has been overwritten is retained for 30 days and then deleted. A photo that is no longer referenced by any record is **deleted automatically after about 30 days** (after deletion it may be kept in Cloud Storage for a further 30 days in case it needs to be recovered).
+- **Versions kept and automatic deletion of photos**: only the latest version of the record data is kept, and a version that has been overwritten is retained for 30 days and then deleted. A photo that is no longer referenced by any record is **deleted automatically after about 30 days** (after deletion it may be kept in Cloud Storage for a further 30 days in case it needs to be recovered, and after that it may still be kept for internal recovery for up to 7 days).
 - **Restoring**: a restore happens only when you ask for it. Nothing is imported automatically. Photos are also downloaded from the cloud to your device when you restore.
 - **After cancellation**: you can still download (restore) the data you stored, including photos, after cancelling the Pro plan. Uploading a new backup is limited to Pro plan subscribers.
-- **Deletion**: the current version has no in-app way to delete the backup held in the cloud (photos included). If you want it deleted, please contact us using the details in Section 19.
+- **Deletion**: you can delete the cloud backup (photos included) together with your account from "Delete account and cloud data" under "Privacy" in Settings (see Section 15). If you have already uninstalled the App, please contact us using the details in Section 21.
 
 ## 9. Advertising
 
@@ -152,6 +160,7 @@ Camera and photo access is used only when you take or select a photo. Photos are
   - Google Gemini API: running the AI feature
   - Google Play (billing, Play Integrity, real-time developer notifications): verifying purchases and checking app integrity
   - Google AdMob and UMP: delivering ads and managing consent
+  - Sharing records with friends (Section 19): only if you join a circle, aggregated values are provided to the other users in the same circle (stored in Firestore managed by the Developer)
   - Firebase Analytics and Firebase Crashlytics (Google): aggregating usage statistics and collecting error and crash records (to improve the App)
 - Information may be disclosed to the extent necessary when disclosure is required by law, or when it is needed to protect someone's life, body or property and obtaining consent is difficult.
 
@@ -160,7 +169,7 @@ Camera and photo access is used only when you take or select a photo. Photos are
 | Information | Location | Retention |
 |---|---|---|
 | Information stored on the device (brew records, master data, analysis results, photo image data, brewing articles, app settings) | Your device | Until you uninstall the App (records and photos you delete are removed from the device at that point) |
-| Account information (identifier, sign-in method, Pro status) | Firestore (Osaka region) | Until you ask us to delete it |
+| Account information (identifier, sign-in method, Pro status) | Firestore (Osaka region) | Until you delete it in the App or ask us to delete it |
 | Usage counters (free, daily) | Firestore | 35 days from creation |
 | Usage counters (Pro, monthly) | Firestore | 400 days from creation |
 | Records of AI runs (including response text) | Firestore | 24 hours |
@@ -169,10 +178,11 @@ Camera and photo access is used only when you take or select a photo. Photos are
 | Purchase records | Firestore | 400 days |
 | Notifications received from Google Play | Firestore | 30 days |
 | Daily aggregates based on hashed IP addresses | Firestore | 7 days |
-| Cloud backup (record data, latest version) | Cloud Storage (Tokyo region) | Until you ask us to delete it |
+| Sharing records with friends (rounded records for aggregation, display name, circle membership, consent record) | Firestore (Osaka region) | Until you stop sharing or are removed (deleted immediately at that point). Records not updated for 90 days or more are excluded from aggregation |
+| Cloud backup (record data, latest version) | Cloud Storage (Tokyo region) | Until you delete it in the App or ask us to delete it |
 | Cloud backup (record data, overwritten versions) | Cloud Storage | 30 days |
-| Cloud backup (photos referenced by your records) | Cloud Storage (Tokyo region) | Until you ask us to delete it |
-| Cloud backup (photos no longer referenced by any record) | Cloud Storage | Deleted automatically about 30 days after they stop being referenced; after deletion they may be kept for a further 30 days in case they need to be recovered |
+| Cloud backup (photos referenced by your records) | Cloud Storage (Tokyo region) | Until you delete it in the App or ask us to delete it |
+| Cloud backup (photos no longer referenced by any record) | Cloud Storage | Deleted automatically about 30 days after they stop being referenced; after deletion they may be kept for a further 30 days in case they need to be recovered, and after that they may still be kept for internal recovery for up to 7 days |
 | Server access logs (identifier, feature name, latency, result) | Cloud Logging | According to the Google Cloud retention settings |
 | Usage statistics (Firebase Analytics) | Google data centres (including in the United States; the region cannot be chosen, and it is separate from the Firestore Osaka region above and from Cloud Storage and Cloud Run in the Tokyo region) | Event data is retained for 14 months |
 | Error and crash records (Firebase Crashlytics) | Same as above (Google data centres, including in the United States) | According to Google's default retention period |
@@ -184,9 +194,9 @@ The relay server runs on Google Cloud Run, and the request logs Cloud Run record
 - **Export**: from "Data" in the settings screen you can export your records to a file on your device. "Export data (includes photos)" packs your records and photos into a single ZIP file (photos are resized in the same way as in Section 8). "Export as CSV" writes only the tabular record data and does not include photos. Exporting is completed on the device and does not go through any server. Exported files are then under your own control.
 - **Import**: you can bring records back in from a file you exported (a ZIP file, or a JSON file in the earlier format). Photos contained in a ZIP file are also brought onto your device.
 - **Deleting data on the device**: the records, master data, analysis results, photo image data, brewing articles and app settings stored on your device are deleted when you uninstall the App. You can also delete individual records and master entries from the screens.
-- **Deleting a cloud backup**: as noted in Section 8, the current version has no in-app deletion (this includes photos). Please contact us using the details in Section 19.
-- **Deleting your account and server-side information**: please contact us using the details in Section 19. After confirming your identity, we will delete the information linked to your identifier and your cloud backup (including photos).
-- **Access, correction and suspension of use**: requests are accepted at the contact point in Section 19.
+- **Deleting your account and server-side information (including the cloud backup)**: you can delete it in the App from "Delete account and cloud data" under "Privacy" in Settings. This deletes the account, the cloud backup (including photos), your membership and contributed records in a circle of friends, share links you created, AI usage counts and promotion code redemption records, and purchase records, and it cannot be undone. After deletion, previous versions of the cloud backup (including photos) kept by versioning remain for up to 30 days, and are then kept for internal recovery for up to a further 7 days before being permanently deleted (you cannot restore it from the App during this time). Data on your device and your Google Play subscription (please cancel it in Google Play first) are not affected. Temporary records kept for abuse prevention are deleted automatically within 90 days at most.
+- **Deletion request if you have already uninstalled the App**: please contact us using the details in Section 21 with the subject "Account deletion request" (if you signed in with Google, include that email address). After confirming your identity, we will delete the data within 30 days of receiving the request. If you only used an anonymous account and uninstalled the App, we cannot identify your data and cannot delete it individually (what remains on the server is a random identifier and usage counts, which do not directly identify you). The steps are also published on the deletion request page (`account_deletion_en`).
+- **Access, correction and suspension of use**: requests are accepted at the contact point in Section 21.
 - **Changing usage and error reporting**: you can turn "Share usage and error reports" off (and back on) at any time under "Privacy" on the settings screen. It is on by default. Turning it off stops the sending of usage statistics and error and crash records. In regions where consent is required, sending also follows your consent status described in Section 9 in addition to this switch, and nothing is sent while consent has not been obtained.
 - **Changing advertising consent**: in regions where consent is required, the consent form is shown at startup. You can reopen the form and change your choice at any time from "Ad consent settings" under "Privacy" on the settings screen (shown only in regions where consent is required). You can also limit personalisation through your device's advertising ID settings.
 
@@ -201,17 +211,44 @@ The App is not designed for children. If you are under 13, please do not use the
 - The API key used for the AI feature is kept as a secret on the relay server and is not included in the App.
 - Server logs do not record instruction text, AI response text, photos, or complete authentication or purchase tokens.
 
-## 18. Changes to this Policy
+## 18. Sharing feature (sharing recipes)
+
+The App has a feature that lets you pass a recipe you choose, at your own initiative, to another user by issuing a share key.
+
+- **What can be shared**: in the current version, you can share one brewing method (a recipe) together with all of its pour steps. Your brew records themselves are not covered by this feature.
+- **Columns that are and are not shared**: what is shared is limited to the columns of the brewing method (method ID, method name, creator, base dose in g, base water volume in ml, water temperature in °C, grind setting, description, recommended equipment, source, and recommended roast level including the lightest and darkest ends of the recommended range) and its pour steps (ID, parent method ID, order, elapsed time in seconds, added water volume in ml, water-volume basis, water-volume ratio, and notes). Photos, purchase price, shop, notes on the record, analysis results, your account identifier (uid), email address and device name are not included.
+- **You are responsible for how you handle the share key**: a share key is not stored on the server as plain text; it is stored hashed. However, because anyone who knows the share key can retrieve its content, it is your own responsibility to decide whom you give the share key to and how. The Developer does not track or know who actually ends up with a share key you issued.
+- **Where it is stored**: the content that is shared is stored in the same Google Cloud Storage bucket the Developer uses for cloud backup (Section 8). Metadata used to manage the share (issue time, expiry, number of retrievals, and so on) is stored in Firestore.
+- **Retention**: when you issue a share, you choose an expiry of 7 or 30 days (30 days by default). A share can no longer be retrieved once it has expired.
+- **Revoking**: you can revoke a share you issued at any time from the "Shares I've issued" screen. A revoked share can no longer be retrieved.
+- **Limit on retrievals**: each share has a limit on how many times it can be retrieved (50). Once that limit is reached, it can no longer be retrieved.
+- This feature is not the Developer providing your information to a third party or selling it (Section 13). Whether to share, and to whom you give the share key, is determined entirely by your own actions and judgement.
+- **Suspension by the Developer**: for a share reported to the contact address in Section 21, if the Developer determines that it contains content that violates the law or public order and morals, the Developer may make it unretrievable without notifying the person who issued it.
+
+## 19. Sharing records with friends (circles)
+
+The App has a feature that lets you create a "circle" with an invite code and pool aggregated brew data with your friends, so that the estimates behind recipe suggestions become more accurate (a circle has up to 5 people; creating a circle is a Pro plan feature, while joining is available on the free plan too). Joining or inviting happens only through your own actions and the consent confirmation shown each time.
+
+- **Items sent to the server**: while you belong to a circle, your device sends only the following 8 items to the server, after rounding them on the device: (1) method ID (only preset recipes provided in the App), (2) origin (only the fixed origins provided in the App), (3) roast level, (4) water temperature (midpoint of a 2°C-wide band), (5) ratio of water to coffee (midpoint of a 0.5-wide band), (6) total brew time (midpoint of a 15-second-wide band), (7) grind setting (equipment dial normalized to 0-1, midpoint of a 0.02-wide band), (8) overall score (1-10). Up to 3,000 records are used, newest first, and their order is shuffled before sending.
+- **Items not sent**: the date and time of a record, IDs of records or beans, names, free-text such as notes, photos, shops, purchase prices, records of your own custom methods, email address and device name are not sent.
+- **Information provided to other users (provision to third parties)**: through your own action, aggregated values summarizing the records of the whole circle are provided to the other users in the same circle. Only bands that have at least a certain number of records under the same conditions are provided; no breakdown that reveals whose records they are, and none of the individual records themselves, are provided. Because this is provision of personal information to third parties, we ask for your consent each time you join or invite, and record on the server the date and time of your consent and the version of the consent text. If you do not consent, you cannot join a circle.
+- **Display name**: when you join a circle, you enter a name (1-12 characters) to show to your friends. This name is shown to the other users in the same circle. It does not need to be your real name. Please do not include anything you would not want the other users to see.
+- **Where it is stored**: the records sent for aggregation, your display name and the circle's membership are stored in Firestore (Osaka region) managed by the Developer (Section 14).
+- **Retention**: when you stop sharing, or when the person who invited you removes you, your records and display name are deleted immediately and are removed from the circle's aggregation. Records not updated for 90 days or more are excluded from aggregation. An invite code can no longer be used once it has expired.
+- **You are responsible for how you handle the invite code**: anyone who knows the invite code can join the circle while it is valid. Please decide whom you give the code to at your own judgement and responsibility.
+- This feature is not the Developer selling your information (Section 13).
+
+## 20. Changes to this Policy
 
 This Policy may be revised in response to changes in law or to new features in the App. When it is revised, the updated text and the last updated date are published on this page. For significant changes, we will give notice in the App or in the store's release notes.
 
-## 19. Contact
+## 21. Contact
 
 For questions about this Policy or about how personal information is handled, please contact:
 
 - Provider: yuzumaruca
 - Contact: matsubara20201021@gmail.com
 
-## 20. Governing law
+## 22. Governing law
 
 This Policy is governed by the laws of Japan, and any dispute relating to it shall be subject to the exclusive jurisdiction of the district court having jurisdiction over the Developer's place of residence as the court of first instance.
