@@ -1,6 +1,6 @@
 # Dripsight Privacy Policy
 
-Last updated: October 9, 2026
+Last updated: November 21, 2026
 Effective date: September 21, 2026
 
 ## 1. Scope
@@ -31,8 +31,8 @@ The categories of information the App handles, and where each is stored, are as 
 | Analysis results | Snapshots of analyses computed on the device, and the history of recipe suggestions | A database (SQLite) on your device |
 | Brewing articles | Articles you write or edit yourself | A database (SQLite) on your device |
 | App settings | Theme, accent colour, language, onboarding status, the reference-data setting, the automatic backup setting, and state such as the time of the last successful backup | A settings area on your device |
-| Usage statistics | Screen IDs, types of actions, counts and durations in seconds (text you enter is not included; Section 12) | Firebase Analytics (Google) |
-| Error and crash records | Exception type, where it occurred, device model and OS version (text you enter is not included; Section 12; in regions where consent is required, nothing is sent until consent has been obtained) | Firebase Crashlytics (Google) |
+| Usage statistics | Screen IDs, types of actions, counts, durations in seconds, and an identifier issued for each installation of the App (such as the Firebase installation ID; this is not the advertising ID) (text you enter is not included; Section 12) | Firebase Analytics (Google) |
+| Error and crash records | Exception type, where it occurred, device model, OS version, and an identifier issued for each installation of the App (text you enter is not included; Section 12; in regions where consent is required, nothing is sent until consent has been obtained) | Firebase Crashlytics (Google) |
 
 - Usage statistics and error and crash records are sent to the Developer to improve the App (analysing usage and fixing defects). Sending them is optional, and you can turn it off at any time under "Privacy" on the settings screen (Section 15).
 - Apart from usage statistics and error and crash records, the information above is not kept anywhere outside your device unless you run the cloud backup described in Section 8. No information identifying you, such as a name or an email address, is attached to a record.
@@ -52,7 +52,7 @@ The categories of information the App handles, and where each is stored, are as 
 | Running a cloud backup (Pro plan) | The data exported from the on-device database (brew records, master data and so on) and the photos you added (resized before sending; see Section 8) | The Developer's Google Cloud Storage (Tokyo region, through the Developer's relay server) |
 | Running the free manual export (Section 15) | (Nothing is sent. The data is written as a file to a location on your device that you choose.) | (Not applicable) |
 | Displaying an ad | Information the ad SDK collects about the device (subject to your consent) | Google (AdMob) |
-| From time to time while the App is open and in use (can be turned off in the settings) | Usage statistics (screen IDs, types of actions, counts, durations in seconds) and error and crash records (exception type, where it occurred, device model, OS version) | Google (Firebase Analytics and Firebase Crashlytics) |
+| From time to time while the App is open and in use (can be turned off in the settings) | Usage statistics (screen IDs, types of actions, counts, durations in seconds) and error and crash records (exception type, where it occurred, device model, OS version), together with the per-installation identifier attached to them | Google (Firebase Analytics and Firebase Crashlytics) |
 
 ## 5. Information sent when you use the AI feature
 
@@ -117,9 +117,9 @@ Pro plan subscribers can keep a copy of their records in the cloud.
 ## 9. Advertising
 
 - In free use, a banner ad is shown on list screens, and rewarded ads (watch to earn AI uses) are offered to obtain free AI uses. Banner ads are not shown on the Pro plan.
-- Ads are delivered by Google AdMob. The ad SDK may collect information about your device and about ads (which may include the advertising ID) in order to deliver ads, measure impressions and prevent fraud. What is collected and how Google handles it is governed by Google's privacy policy and AdMob's policies.
+- Ads are delivered by Google AdMob. The ad SDK may collect information about your device and about ads (which may include the advertising ID) in order to deliver ads, for analytics such as measuring impressions, and to prevent fraud. What is collected and how Google handles it is governed by Google's privacy policy and AdMob's policies.
 - In regions where consent is required, such as the European Economic Area and the United Kingdom, a consent form provided by Google's UMP (User Messaging Platform) is shown at startup. If consent has not been obtained, the ad SDK is not initialised. Your consent choice is also applied to usage measurement (Google Analytics) and to the collection of error and crash information (Firebase Crashlytics).
-- Usage measurement (Firebase Analytics) does not collect the advertising ID and does not use it to personalise ads. The party that may obtain the advertising ID is the ad SDK (AdMob), which is handled as described above.
+- Usage measurement (Firebase Analytics) does not collect the advertising ID (collection is disabled in the App's configuration) and is not used to personalise ads. The device identifier used for usage analysis is an identifier issued for each installation of the App (such as the Firebase installation ID; Section 3). The party that may obtain the advertising ID is the ad SDK (AdMob), which uses it for ad delivery, analytics and fraud prevention, as described above.
 - The Developer does not use the brew records, scores or photos you enter for ad targeting, and does not pass them to the ad SDK.
 
 ## 10. Purchases (Google Play)
@@ -143,11 +143,11 @@ The App ships with reference data built from the Developer's own past brew recor
 The App does not collect the following.
 
 - Name, address, telephone number or date of birth
-- Location, contacts, call history, SMS, or the list of other apps on your device
-- Text you enter (bean names, shop names, notes, comments, and the titles and bodies of brewing articles) recorded in the usage statistics or the error and crash records (Section 3). These contain only fixed identifiers defined by the App and numbers, such as screen IDs, types of actions, counts and durations in seconds. The account identifier (uid), email address, display name, photos and location are not included either.
+- Device location (such as GPS), contacts, call history, SMS, or the list of other apps on your device
+- Text you enter (bean names, shop names, notes, comments, and the titles and bodies of brewing articles) recorded in the usage statistics or the error and crash records (Section 3). These contain only fixed identifiers defined by the App and numbers, such as screen IDs, types of actions, counts and durations in seconds, plus the per-installation identifier described in Section 3. The account identifier (uid), email address, display name, photos and location are not included either.
 - Device tokens for sending notifications. The App does not send push notifications.
 
-The list above covers information the Developer does not collect as a function of the App. Information the ad SDK collects in order to deliver ads (which may include the advertising ID) is separate from this and is handled as described in Section 9.
+The list above covers information the Developer does not collect as a function of the App. Information the ad SDK collects in order to deliver ads (which may include the advertising ID) is separate from this and is handled as described in Section 9. Note that AdMob and Firebase Analytics may estimate your approximate region from the IP address of your connection.
 
 Camera and photo access is used only when you take or select a photo. Photos are handled as described in Sections 3, 5 and 8.
 
